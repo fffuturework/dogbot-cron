@@ -33,5 +33,6 @@ jobs:
           git clone https://github.com/fffuturework/dogbot
           cd dogbot
           npm i
+          DB_SOURCE='https://gist.githubusercontent.com/fffuturework/dd8a412b5f0d96b7f8fcb5e7e1715f9b/raw/104d5128b80889c992d45ce3f6704a6fbd2a8afd/dogbot-example-twitter-trend.js' HEADLESS=true npx codeceptjs run --verbose
           cd ..
           rm -rf dogbot
