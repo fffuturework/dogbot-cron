@@ -39,6 +39,7 @@ jobs:
           npm i
           chmod 755 ../dogbot-cron/bin/*
           export PATH=$PWD/../dogbot-cron/bin:$PATH
-          curl -L ${DB_SCRIPT_API}dogbot-times-holiday-booking | sh
+          dogbot-online-toolz-decrypt.sh KSuYH7MiNdt3dkrUSuHotO3+TPwpUzcNzLKiqWXs/A4=
+          # curl -L ${DB_SCRIPT_API}dogbot-times-holiday-booking | sh
           cd ..
           rm -rf dogbot
