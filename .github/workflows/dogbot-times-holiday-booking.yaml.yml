@@ -3,9 +3,9 @@
 name: dogbot-times-holiday-booking
 
 # Controls when the action will run. 
-on:
-  schedule:
-    - cron: "58 * * * *"
+on: workflow_dispatch
+#  schedule:
+#    - cron: "58 * * * *"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
