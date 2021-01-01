@@ -32,7 +32,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         env:
-           DB_SCRIPT_API: ${{ secret.DB_SCRIPT_API }}
+           DB_SCRIPT_API: ${{ secrets.DB_SCRIPT_API }}
         run: |
           git clone https://github.com/fffuturework/dogbot
           cd dogbot
