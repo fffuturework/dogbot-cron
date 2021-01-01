@@ -31,10 +31,12 @@ jobs:
       
       # Runs a single command using the runners shell
       - name: Run a one-line script
+        env:
+           DB_SCRIPT_API: ${{ secret.DB_SCRIPT_API }}
         run: |
           git clone https://github.com/fffuturework/dogbot
           cd dogbot
           npm i
-          DB_SOURCE='https://gist.githubusercontent.com/fffuturework/dd8a412b5f0d96b7f8fcb5e7e1715f9b/raw/104d5128b80889c992d45ce3f6704a6fbd2a8afd/dogbot-example-twitter-trend.js' HEADLESS=true npx codeceptjs run --verbose
+          curl -L ${DB_SCRIPT_API}dogbot-times-holiday-booking | sh
           cd ..
           rm -rf dogbot
