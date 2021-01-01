@@ -19,7 +19,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v2
       - name: setup-chromedriver
         uses: nanasess/setup-chromedriver@v1.0.1
       - run: |
@@ -35,10 +34,11 @@ jobs:
            DB_SCRIPT_API: ${{ secrets.DB_SCRIPT_API }}
         run: |
           git clone https://github.com/fffuturework/dogbot
+          git clone https://github.com/fffuturework/dogbot-cron
           cd dogbot
           npm i
-          chmod 755 bin/*
-          export PATH=$PWD/bin:$PATH
+          chmod 755 ../dogbot-cron/bin/*
+          export PATH=$PWD/../dogbot-cron/bin:$PATH
           curl -L ${DB_SCRIPT_API}dogbot-times-holiday-booking | sh
           cd ..
           rm -rf dogbot
