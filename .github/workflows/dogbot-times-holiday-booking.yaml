@@ -19,7 +19,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
       - name: setup-chromedriver
         uses: nanasess/setup-chromedriver@v1.0.1
       - run: |
@@ -37,6 +37,8 @@ jobs:
           git clone https://github.com/fffuturework/dogbot
           cd dogbot
           npm i
+          chmod 755 bin/*
+          export PATH=$PWD/bin:$PATH
           curl -L ${DB_SCRIPT_API}dogbot-times-holiday-booking | sh
           cd ..
           rm -rf dogbot
