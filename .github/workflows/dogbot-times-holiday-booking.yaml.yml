@@ -22,6 +22,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: setup-chromedriver
         uses: nanasess/setup-chromedriver@v1.0.1
+      - run: |
+          chromedriver  &
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
